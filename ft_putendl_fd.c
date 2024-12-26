@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: armarake <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/03 22:11:01 by armarake          #+#    #+#             */
-/*   Updated: 2024/12/03 22:11:01 by armarake         ###   ########.fr       */
+/*   Created: 2024/12/26 22:38:23 by armarake          #+#    #+#             */
+/*   Updated: 2024/12/26 22:38:23 by armarake         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+#include "libft.h"
+
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
 }
