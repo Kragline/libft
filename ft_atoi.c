@@ -6,28 +6,29 @@
 /*   By: armarake <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 20:01:27 by armarake          #+#    #+#             */
-/*   Updated: 2024/12/04 20:01:27 by armarake         ###   ########.fr       */
+/*   Updated: 2025/01/13 14:22:48 by armarake         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *str)
 {
-	int	res;
 	int	sign;
+	int	res;
 
-	res = 0;
 	sign = 1;
-	while ((*str >= 9 && *str <= 13) || *str == ' ')
+	res = 0;
+	while (*str && (*str == 32 || (*str >= 9 && *str <= 13)))
 		str++;
-	while (*str == '-' || *str == '+')
+	if (*str == '-')
 	{
-		if (*str == '-')
-			sign *= -1;
+		sign *= -1;
 		str++;
 	}
+	else if (*str == '+')
+		str++;
 	while (*str && (*str >= '0' && *str <= '9'))
 	{
-		res = (res * 10) + (*str - '0');
+		res = res * 10 + (*str - '0');
 		str++;
 	}
 	return (sign * res);

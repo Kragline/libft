@@ -6,7 +6,7 @@
 /*   By: armarake <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 15:11:11 by armarake          #+#    #+#             */
-/*   Updated: 2024/12/04 15:11:11 by armarake         ###   ########.fr       */
+/*   Updated: 2025/01/13 12:28:38 by armarake         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	s_ptr = (unsigned char *)s;
 	chr = (unsigned char)c;
-	while (n > 0 && *s_ptr)
+	while (n > 0)
 	{
 		if (*s_ptr == chr)
 			return ((void *)s_ptr);

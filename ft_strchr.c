@@ -6,7 +6,7 @@
 /*   By: armarake <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/03 22:31:01 by armarake          #+#    #+#             */
-/*   Updated: 2024/12/03 22:31:01 by armarake         ###   ########.fr       */
+/*   Updated: 2025/01/13 13:05:59 by armarake         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (const char)c)
 			return ((char *)s);
 		s++;
 	}
-	if (*s == c)
+	if (*s == (const char)c)
 		return ((char *)s);
 	return (NULL);
 }
