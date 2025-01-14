@@ -6,7 +6,7 @@
 /*   By: armarake <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 14:51:34 by armarake          #+#    #+#             */
-/*   Updated: 2024/12/22 14:51:34 by armarake         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:05:34 by armarake         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
-	str = malloc(sizeof(char *) * (s1len + s2len + 1));
+	str = malloc(sizeof(char) * (s1len + s2len + 1));
 	if (!str)
 		return (NULL);
 	ft_memmove(str, s1, s1len);

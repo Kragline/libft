@@ -6,7 +6,7 @@
 /*   By: armarake <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 15:42:20 by armarake          #+#    #+#             */
-/*   Updated: 2024/12/22 15:42:20 by armarake         ###   ########.fr       */
+/*   Updated: 2025/01/14 15:41:20 by armarake         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,39 +26,30 @@ static int	to_trim(char const *set, char c)
 	return (0);
 }
 
-static char	*malloc_word(char const *str, size_t start, size_t end)
-{
-	size_t		i;
-	size_t		len;
-	char		*new;
-
-	len = end - start + 1;
-	if (len <= 0 || start >= ft_strlen(str))
-		return (ft_strdup(""));
-	new = malloc(sizeof(char) * (len + 1));
-	if (!new)
-		return (NULL);
-	i = 0;
-	while (str[start + i] && i < len)
-	{
-		new[i] = str[start + i];
-		i++;
-	}
-	return (new);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	char	*new;
 	size_t	i;
-	size_t	j;
+	size_t	start;
+	size_t	end;
 
 	if (ft_strlen(s1) == 0)
 		return (ft_strdup(""));
+	start = 0;
+	end = ft_strlen(s1) - 1;
+	while (s1[start] && to_trim(set, s1[start]))
+		start++;
+	while (to_trim(set, s1[end]) && start <= end)
+		end--;
+	new = (char *)malloc(end - start + 2);
+	if (!new)
+		return (NULL);
 	i = 0;
-	j = ft_strlen(s1) - 1;
-	while (to_trim(set, s1[i]))
+	while (start + i <= end)
+	{
+		new[i] = s1[start + i];
 		i++;
-	while (to_trim(set, s1[j]))
-		j--;
-	return (malloc_word(s1, i, j));
+	}
+	new[i] = '\0';
+	return (new);
 }

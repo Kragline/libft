@@ -6,7 +6,7 @@
 /*   By: armarake <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 20:22:11 by armarake          #+#    #+#             */
-/*   Updated: 2024/12/04 20:22:11 by armarake         ###   ########.fr       */
+/*   Updated: 2025/01/14 14:57:30 by armarake         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
+	if ((size != 0 && count > 65536) || (size > 65536 && count != 0))
+		return (NULL);
 	if (count == 0 || size == 0)
 	{
 		count = 1;
