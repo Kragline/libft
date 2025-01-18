@@ -6,7 +6,7 @@
 /*   By: armarake <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 14:00:50 by armarake          #+#    #+#             */
-/*   Updated: 2025/01/18 15:46:44 by armarake         ###   ########.fr       */
+/*   Updated: 2025/01/18 16:06:56 by armarake         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
+	if (!new)
+		return ;
 	if (!*lst)
 	{
 		*lst = new;

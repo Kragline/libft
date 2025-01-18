@@ -6,7 +6,7 @@
 /*   By: armarake <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 15:19:30 by armarake          #+#    #+#             */
-/*   Updated: 2025/01/18 15:48:24 by armarake         ###   ########.fr       */
+/*   Updated: 2025/01/18 16:15:08 by armarake         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;	
 	t_list	*new_node;
 
+	if (!lst || !f || ! del)
+		return (NULL);
 	new_list = NULL;
 	while (lst)
 	{
