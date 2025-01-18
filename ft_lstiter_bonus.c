@@ -6,13 +6,13 @@
 /*   By: armarake <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 15:12:32 by armarake          #+#    #+#             */
-/*   Updated: 2025/01/18 15:17:43 by armarake         ###   ########.fr       */
+/*   Updated: 2025/01/18 15:47:52 by armarake         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)
 	{
