@@ -20,14 +20,13 @@ OBJS := $(SRCS:%.c=%.o)
 
 BONUS_OBJS = $(BONUS:%.c=%.o)
 
-%.o: %.c
+%.o: %.c Makefile libft.h
 	$(CC) $(CCFLAGS) -c $< -o $@
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	ar rcs $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)
@@ -37,8 +36,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
-	ranlib $(NAME)
+bonus: $(BONUS_OBJS)
+	ar rcs $(NAME) $(BONUS_OBJS)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
