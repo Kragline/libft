@@ -6,7 +6,7 @@
 /*   By: armarake <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/22 18:21:41 by armarake          #+#    #+#             */
-/*   Updated: 2025/01/14 16:56:57 by armarake         ###   ########.fr       */
+/*   Updated: 2025/01/23 20:01:42 by armarake         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,17 @@ static size_t	count_words(char const *str, char c)
 	return (count);
 }
 
-static void	*free_word(char *str)
+static void	*free_array(char **array)
 {
-	free(str);
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 	return (NULL);
 }
 
@@ -65,7 +73,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		arr[i] = ft_substr(new_s, 0, s - new_s);
 		if (!arr[i])
-			return (free_word(arr[i]));
+			return (free_array(arr));
 	}
 	arr[i] = NULL;
 	return (arr);
