@@ -34,7 +34,7 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean all
+re: fclean bonus
 
 bonus: all $(BONUS_OBJS)
 	ar rcs $(NAME) $(BONUS_OBJS)
