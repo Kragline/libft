@@ -2,7 +2,7 @@ NAME = libft.a
 
 CC = cc
 
-CCFLAGS = -Wextra -Werror -Wall
+CCFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_atoi.c ft_isalpha.c ft_itoa.c ft_memmove.c ft_putnbr_fd.c \
 	ft_strdup.c ft_strlcpy.c ft_strnstr.c ft_tolower.c \
